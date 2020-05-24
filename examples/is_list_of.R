@@ -8,9 +8,9 @@ is_list_of_lists(list_of_characters)
 is_list_of_lists(list_of_integers)
 
 # Test if all elements of a list are character vectors
-is_list_of_characters(list_of_lists)
-is_list_of_characters(list_of_characters)
-is_list_of_characters(list_of_integers)
+is_character_list(list_of_lists)
+is_character_list(list_of_characters)
+is_character_list(list_of_integers)
 
 # Use any test function to test all elements of a list...
 # ... with a class or type name
@@ -24,5 +24,5 @@ is_list_of(list_of_integers, ~ all(. %% 1 == 0))
 
 # All functions give a warning and return FALSE if their input is not a list
 is_list_of_lists(1:4)
-is_list_of_characters(1:4)
+is_character_list(1:4)
 is_list_of(1:4, is.integer)
