@@ -32,7 +32,8 @@ is_list_of <- function(x, test) {
     return(FALSE)
   }
 
-  if (length(test) != 1) stop("`test` must be length one.")
+  if (length(test) != 1 & !rlang::is_formula(test))
+    stop("`test` must be length one.")
 
   if (is.character(test)) {
     all(vapply(x, class, character(1)) == test) |
