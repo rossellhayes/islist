@@ -45,13 +45,14 @@ is_list_of <- function(x, test) {
 #' @rdname is_list_of
 #' @export
 
-is_list_of_lists <- function(x) {
-  is_list_of(x, is.list)
-}
+is_atomic_list <- function(x) is_list_of(x, rlang::is_atomic)
 
 #' @rdname is_list_of
 #' @export
 
-is_list_of_characters <- function(x) {
-  is_list_of(x, is.character)
-}
+is_list_of_lists <- function(x) is_list_of(x, is.list)
+
+#' @rdname is_list_of
+#' @export
+
+is_character_list <- function(x) is_list_of(x, is.character)
